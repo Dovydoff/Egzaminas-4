@@ -10,16 +10,16 @@ turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 const ENDPOINT = "cars.json";
 
-const divEl = document.querySelector("div");
+const divEl = document.querySelector("#output");
 
-fetch("./cars.json")
+fetch(ENDPOINT)
   .then((response) => response.json())
   .then((data) => {
     data.forEach((post) => {
       divEl.insertAdjacentHTML(
         "beforeend",
-        `<div id="brand">⏬${post.brand}⏬ </div> 
-      <div id="models">🚗Models --> ${post.models}<-- Models🚗</div> 
+        `<div id="brand">Brand -->${post.brand} 🚗</div> 
+      <div id="models">🚙Models --> ${post.models}<-- Models</div> 
       `
       );
     });
